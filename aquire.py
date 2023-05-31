@@ -59,5 +59,11 @@ def merging_all_data(df1, df2, df3):
     df1['plannet_merge'] = the_merge_list
     df3['plannet_merge'] = df3.name
     df1.merge(df3, on = 'plannet_merge', how = 'left')
+    
+    return df1, df2, df3
+
+
+def get_csv_germany():
+    return pd.read_csv('Germany.csv')
 
     
