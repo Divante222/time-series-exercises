@@ -138,7 +138,7 @@ def germany_prep(df):
     df = df.sort_index()
     df['Wind'].fillna(value=df['Wind'].mean(), inplace=True)
     df['Solar'].fillna(value=df['Solar'].mean(), inplace=True)
-    df['Wind+Solar'].fillna(value=df['Wind+Solar'].mean(), inplace=True)
+    df['Wind+Solar'].fillna(value=0, inplace=True)
     df = df.drop(columns = 'Unnamed: 0')
     return df
 
