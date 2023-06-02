@@ -129,6 +129,14 @@ def sales_total_add(df):
     df['sales_total'] = df['sale_amount'] * df['item_price']
     return df
 
+def prep_sales(df):
+    df.sale_date = pd.to_datetime(df.sale_date)
+    df = df.set_index('sale_date')
+    df['month'] = df.index.month
+    df['weekday'] = df.index.day_name()
+    df['sales_total'] = df['sale_amount'] * df['item_price']
+    return df
+
 
 def germany_prep(df):
     df.Date = pd.to_datetime(df.Date)
